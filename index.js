@@ -120,12 +120,10 @@ for (let i = 0; i < finances.length - 1; i++) {
   }
 }
 
-console.log(totalMonths);
-
-console.log(netTotal);
-
-console.log(parseFloat(averageChange / (finances.length - 1)).toFixed(2));
-
-console.log(greatestMonth + " " + greatestIncrease);
-
-console.log(greatestDecreaseMonth + " " + greatestDecrease);
+console.log(
+  `Financial Analysis\n----------------\nTotal Months: ${totalMonths}\nTotal: $${netTotal}\nAverage Change: ${parseFloat(
+    averageChange / (finances.length - 1)
+  ).toFixed(
+    2
+  )}\nGreatest Increase in Profits/Losses: ${greatestMonth} ($${greatestIncrease})\nGreatest Decrease in Profits/Losses: ${greatestDecreaseMonth} ($${greatestDecrease})`
+);
