@@ -90,3 +90,11 @@ var finances = [
 
 //Number Of Months is the array's length
 console.log(finances.length);
+
+//Total amount of Profit/Losses
+let netTotal = 0;
+for (let i = 0; i < finances.length; i++) {
+    netTotal += finances[i][1];
+}
+
+console.log(netTotal);
