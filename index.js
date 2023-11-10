@@ -107,3 +107,17 @@ for (let i = 0; i < finances.length - 1; i++) {
 }
 
 console.log(parseFloat(averageChange / (finances.length - 1)).toFixed(2));
+
+// Greatest Increase
+let greatestIncrease = 0;
+let greatestMonth = ""
+for (let i = 0; i < finances.length - 1; i++) {
+  let change = finances[i + 1][1] - finances[i][1];
+
+  if (change > greatestIncrease) {
+    greatestIncrease = change;
+    greatestMonth = finances[i+1][0];
+  }
+}
+
+console.log(greatestMonth + " " + greatestIncrease)
