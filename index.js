@@ -108,7 +108,7 @@ for (let i = 0; i < finances.length - 1; i++) {
 
 console.log(parseFloat(averageChange / (finances.length - 1)).toFixed(2));
 
-// Greatest Increase
+// Greatest Increase in Profit/Losses
 let greatestIncrease = 0;
 let greatestMonth = ""
 for (let i = 0; i < finances.length - 1; i++) {
@@ -120,4 +120,18 @@ for (let i = 0; i < finances.length - 1; i++) {
   }
 }
 
-console.log(greatestMonth + " " + greatestIncrease)
+console.log(greatestMonth + " " + greatestIncrease);
+
+//Greatest Decrease in Profit/Losses
+let greatestDecrease = 0;
+let greatestDecreaseMonth = ""
+for (let i = 0; i < finances.length - 1; i++) {
+  let change = finances[i + 1][1] - finances[i][1];
+
+  if (change < greatestDecrease) {
+    greatestDecrease = change;
+    greatestDecreaseMonth = finances[i+1][0];
+  }
+}
+
+console.log(greatestDecreaseMonth + " " + greatestDecrease)
