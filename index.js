@@ -89,7 +89,15 @@ var finances = [
 ];
 
 //Number Of Months is the array's length
-console.log(finances.length);
+let totalMonths = finances.length;
+//Average of changes
+let averageChange = 0;
+// Greatest Increase in Profit/Losses
+let greatestIncrease = 0;
+let greatestMonth = "";
+//Greatest Decrease in Profit/Losses
+let greatestDecrease = 0;
+let greatestDecreaseMonth = "";
 
 //Total amount of Profit/Losses
 let netTotal = 0;
@@ -97,41 +105,27 @@ for (let i = 0; i < finances.length; i++) {
   netTotal += finances[i][1];
 }
 
-console.log(netTotal);
-
-//Average of changes
-let averageChange = 0;
 for (let i = 0; i < finances.length - 1; i++) {
   let change = finances[i + 1][1] - finances[i][1];
   averageChange += change;
-}
-
-console.log(parseFloat(averageChange / (finances.length - 1)).toFixed(2));
-
-// Greatest Increase in Profit/Losses
-let greatestIncrease = 0;
-let greatestMonth = ""
-for (let i = 0; i < finances.length - 1; i++) {
-  let change = finances[i + 1][1] - finances[i][1];
 
   if (change > greatestIncrease) {
     greatestIncrease = change;
-    greatestMonth = finances[i+1][0];
+    greatestMonth = finances[i + 1][0];
   }
-}
-
-console.log(greatestMonth + " " + greatestIncrease);
-
-//Greatest Decrease in Profit/Losses
-let greatestDecrease = 0;
-let greatestDecreaseMonth = ""
-for (let i = 0; i < finances.length - 1; i++) {
-  let change = finances[i + 1][1] - finances[i][1];
 
   if (change < greatestDecrease) {
     greatestDecrease = change;
-    greatestDecreaseMonth = finances[i+1][0];
+    greatestDecreaseMonth = finances[i + 1][0];
   }
 }
 
-console.log(greatestDecreaseMonth + " " + greatestDecrease)
+console.log(totalMonths);
+
+console.log(netTotal);
+
+console.log(parseFloat(averageChange / (finances.length - 1)).toFixed(2));
+
+console.log(greatestMonth + " " + greatestIncrease);
+
+console.log(greatestDecreaseMonth + " " + greatestDecrease);
