@@ -107,19 +107,23 @@ for (let i = 0; i < finances.length; i++) {
 
 for (let i = 0; i < finances.length - 1; i++) {
   let change = finances[i + 1][1] - finances[i][1];
+  //Average Change
   averageChange += change;
 
+  //Greatest Increase
   if (change > greatestIncrease) {
     greatestIncrease = change;
     greatestMonth = finances[i + 1][0];
   }
 
+  //Greatest Decrease
   if (change < greatestDecrease) {
     greatestDecrease = change;
     greatestDecreaseMonth = finances[i + 1][0];
   }
 }
 
+//Final Output
 console.log(
   `Financial Analysis\n----------------\nTotal Months: ${totalMonths}\nTotal: $${netTotal}\nAverage Change: ${parseFloat(
     averageChange / (finances.length - 1)
